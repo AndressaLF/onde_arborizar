@@ -171,12 +171,12 @@ O trabalho anda em fila. Cada passo produz um arquivo. O passo seguinte abre ess
 
 | Passo | O que você termina tendo | Como você sabe que deu certo |
 |---|---|---|
-| 1 | As pastas `Data/` preenchidas com os arquivos do IBGE, do MapBiomas, das escolas, da EMPARN, do INMET e do IDEMA | Na tabela de moradores, Parnamirim aparece com o código `2403251` e a soma fica perto de 252.716 pessoas. O teste está em [ETAPAS, etapa 2](ETAPAS.md#etapa-2) |
-| 2 | Uma ficha única, `resultados/setores_prontos.gpkg`: um pedaço da cidade por linha, já com calor, verde, gente, escola e área a conservar | A população somada continua perto de 252.716. O teste está em [ETAPAS, etapa 3](ETAPAS.md#etapa-3) |
-| 3 | A lista de plantio, em `resultados/fila_plantio.csv`, que abre no Excel, e o mapa `fila_plantio.gpkg` | O primeiro lugar está quente e com pouco verde. Barreira do Inferno e lagoa saem como `outra medida`, não como muda. O teste está em [ETAPAS, etapa 4](ETAPAS.md#etapa-4) |
-| 4 | Um relatório curto, `resultados/conferencia.txt`, com a data e o resultado de cada teste | Todos os itens estão marcados como `ok`. O roteiro está em [ETAPAS, etapa 5](ETAPAS.md#etapa-5) |
-| 5 | A página no navegador, aberta pelo comando `streamlit run app.py` | O clique num pedaço mostra os mesmos números da linha correspondente no Excel. O teste está em [ETAPAS, etapa 6](ETAPAS.md#etapa-6) |
-| 6 | A atualização mensal, feita pelo arquivo `atualizar.py` e pelo Agendador de Tarefas do Windows | A lista nova só substitui a que está no ar se a conferência passar. O roteiro está em [ETAPAS, atualização automática](ETAPAS.md#ferramenta-automatica) |
+| 1 | As pastas `Data/` preenchidas com os arquivos do IBGE, do MapBiomas, das escolas, da EMPARN, do INMET e do IDEMA | Na tabela de moradores, Parnamirim aparece com o código `2403251` e a soma fica perto de 252.716 pessoas. O que essa etapa entrega está em [ETAPAS, etapa 2](ETAPAS.md#etapa-2) |
+| 2 | Uma ficha única, `resultados/setores_prontos.gpkg`: um pedaço da cidade por linha, já com calor, verde, gente, escola e área a conservar | A população somada continua perto de 252.716. O que essa etapa entrega está em [ETAPAS, etapa 3](ETAPAS.md#etapa-3) |
+| 3 | A lista de plantio, em `resultados/fila_plantio.csv`, que abre no Excel, e o mapa `fila_plantio.gpkg` | O primeiro lugar está quente e com pouco verde. Barreira do Inferno e lagoa saem como `outra medida`, não como muda. O que essa etapa entrega está em [ETAPAS, etapa 4](ETAPAS.md#etapa-4) |
+| 4 | Um relatório curto, `resultados/conferencia.txt`, com a data e o resultado de cada teste | Todos os itens estão marcados como `ok`. O que essa etapa entrega está em [ETAPAS, etapa 5](ETAPAS.md#etapa-5) |
+| 5 | A página no navegador, aberta pelo comando `streamlit run app.py` | O clique num pedaço mostra os mesmos números da linha correspondente no Excel. O que essa etapa entrega está em [ETAPAS, etapa 6](ETAPAS.md#etapa-6) |
+| 6 | A atualização mensal, feita pelo arquivo `atualizar.py` e pelo Agendador de Tarefas do Windows | A lista nova só substitui a que está no ar se a conferência passar. O que essa etapa entrega está em [ETAPAS, atualização automática](ETAPAS.md#ferramenta-automatica) |
 
 <a id="etapas-python"></a>
 
@@ -184,7 +184,7 @@ O trabalho anda em fila. Cada passo produz um arquivo. O passo seguinte abre ess
 
 Python é a linguagem que lê a tabela do IBGE, o mapa de calor e faz a conta da lista. A página no navegador também é um programa Python. O nome desse programa de página é Streamlit.
 
-Faça uma etapa por vez. Cada uma termina com um arquivo que você abre e confere. O comando, o teste e a ordem detalhada estão no [ETAPAS.md](ETAPAS.md).
+Faça uma etapa por vez. Cada uma termina com um arquivo que você abre e confere. O que cada etapa entrega está no [ETAPAS.md](ETAPAS.md).
 
 <a id="etapa-ambiente"></a>
 
@@ -205,7 +205,7 @@ Você prepara o computador uma vez. Cria uma caixa separada, chamada `.venv`, pa
 | `streamlit` | Montar a página no navegador |
 | `folium` | Desenhar o mapa com clique, dentro dessa página |
 
-A instalação e o teste de cada ferramenta estão em [ETAPAS, etapa 1](ETAPAS.md#etapa-1).
+O que essa preparação entrega está em [ETAPAS, etapa 1](ETAPAS.md#etapa-1).
 
 <a id="etapa-baixar"></a>
 
@@ -222,7 +222,7 @@ Você baixa cada arquivo no site do órgão e salva na pasta correspondente, com
 | `Data/INMET/` | Temperatura da estação de Natal |
 | `Data/IDEMA/` | Mata, água e área protegida |
 
-A conferência é a população de Parnamirim perto de 252.716, o Jardim Planalto perto de 46,4% com árvore, e o posto 3819844 na tabela de chuva. O passo a passo está em [ETAPAS, etapa 2](ETAPAS.md#etapa-2).
+A conferência é a população de Parnamirim perto de 252.716, o Jardim Planalto perto de 46,4% com árvore, e o posto 3819844 na tabela de chuva. O que essa etapa entrega está em [ETAPAS, etapa 2](ETAPAS.md#etapa-2).
 
 <a id="etapa-cruzar"></a>
 
@@ -232,7 +232,7 @@ Os arquivos ainda estão separados. Esta etapa junta tudo numa ficha: uma linha 
 
 O código do setor precisa continuar texto. Se virar número, o zero do começo some e a soma de moradores cai. No fim você tem `resultados/setores_prontos.csv`, para abrir no Excel, e `resultados/setores_prontos.gpkg`, que é o mesmo conteúdo com o desenho do mapa.
 
-A ordem e o teste setor a setor estão em [ETAPAS, etapa 3](ETAPAS.md#etapa-3).
+O que essa etapa entrega está em [ETAPAS, etapa 3](ETAPAS.md#etapa-3).
 
 <a id="etapa-fila"></a>
 
@@ -242,7 +242,7 @@ A ficha ainda não diz por onde começar. O arquivo `fila.py` transforma cada co
 
 A nota final soma cada nota vezes um peso: calor 3, falta de árvore 2, pessoas no sol 2, escola ou posto 2, espaço para plantar 3. Um setor na porta da escola, quente e com faixa de grama, sobe. Sem grama, ou em mata e lagoa, a recomendação é `outra medida`.
 
-Você termina com `resultados/fila_plantio.csv`. A posição 1 é onde a equipe começa. A conta de uma linha no papel está em [ETAPAS, etapa 4](ETAPAS.md#etapa-4).
+Você termina com `resultados/fila_plantio.csv`. A posição 1 é onde a equipe começa. O que essa etapa entrega está em [ETAPAS, etapa 4](ETAPAS.md#etapa-4).
 
 <a id="etapa-conferir"></a>
 
@@ -250,7 +250,7 @@ Você termina com `resultados/fila_plantio.csv`. A posição 1 é onde a equipe 
 
 Aqui você não calcula de novo. Você decide se a lista pode ir para a página. Olhe quatro coisas: o primeiro lugar está quente e com pouco verde; Barreira do Inferno e as lagoas aparecem como `outra medida`; o Jardim Planalto continua perto de 46,4% com árvore; mudar o peso do calor muda a ordem.
 
-Anote data e resultado em `resultados/conferencia.txt`. Só marque `ok` se os testes passarem. O roteiro está em [ETAPAS, etapa 5](ETAPAS.md#etapa-5).
+Anote data e resultado em `resultados/conferencia.txt`. Só marque `ok` se os testes passarem. O que essa etapa entrega está em [ETAPAS, etapa 5](ETAPAS.md#etapa-5).
 
 <a id="etapa-publico"></a>
 
@@ -260,7 +260,7 @@ O arquivo `app.py` lê a lista pronta e mostra a página. Quem usa a prefeitura 
 
 O clique num setor mostra os mesmos números daquela linha no Excel. No rodapé ficam três frases: a nota diz onde plantar primeiro; ela não mede oxigênio e não escolhe o buraco da muda; a árvore não entra como filtro da avenida mais poluída.
 
-O que clicar para conferir está em [ETAPAS, etapa 6](ETAPAS.md#etapa-6). A atualização mensal, depois que a página estiver no ar, está em [ETAPAS, atualização automática](ETAPAS.md#ferramenta-automatica).
+O que a página mostra está em [ETAPAS, etapa 6](ETAPAS.md#etapa-6). A atualização mensal, depois que a página estiver no ar, está em [ETAPAS, atualização automática](ETAPAS.md#ferramenta-automatica).
 
 <a id="referencias"></a>
 
