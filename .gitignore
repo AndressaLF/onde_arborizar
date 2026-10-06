@@ -1,0 +1,9 @@
+# Orientação local do Cursor. Fica na máquina e não entra no Git.
+.cursor/rules/uso-do-cursor.mdc
+manual-reproducao.md
+
+# Ambiente local do Python. Não entra no Git.
+.venv/
+__pycache__/
+*.pyc
+.env
